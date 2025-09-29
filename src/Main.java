@@ -9,16 +9,27 @@ public class Main {
         //tablica musi miec rozmiar, ktory nie moze byc ponizej zmieniony
         //moze zawierac typu proste i zlozone
 
+        int [] tablicaLosowych1 = losujLiczbyDoTablicy(10);
+                //dry
+        wypisz(tablicaLosowych1);
 
-        int[] tablicaLiczbLosowych = new int[10];
+
+        //wypisz wylosowane liczba na ekranie
+
+    }
+    private static void wypisz(int[] tablica){
+        System.out.println("Wypisywanie tablicy");
+        for (int elementTablicy:tablica){
+            System.out.println(elementTablicy+" ,");
+        }
+    }
+
+    private static int[] losujLiczbyDoTablicy(int ileLiczb){
+        int[] tablicaLiczbLosowych = new int[ileLiczb];
         Random random =new Random();
         for (int i = 0; i < tablicaLiczbLosowych.length ; i++) {
             tablicaLiczbLosowych[i] = random.nextInt(20)+1;
         }
-        //wypisz wylosowane liczba na ekranie
-        System.out.println("Wypisywanie tablicy");
-        for (int elementTablicy:tablicaLiczbLosowych){
-            System.out.println(elementTablicy+" ,");
-        }
+        return tablicaLiczbLosowych;
     }
 }
