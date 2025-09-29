@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,8 +13,8 @@ public class Main {
         //moze zawierac typu proste i zlozone
 
         //SIE PODKRESLA NA CZERWONE
-        // int [] tablicaLosowych1 = losujLiczbyDoTablicy(10);
-        //wypisz(tablicaLosowych1);
+         //int [] tablicaLosowych1 = losujLiczbyDoTablicy(10);
+         //wypisz(tablicaLosowych1);
 
 
         //wypisz wylosowane liczba na ekranie
@@ -22,9 +23,21 @@ public class Main {
         ArrayList<Integer> wylosowane = wylosujLiczbyDoListy(10);
         wypisz(wylosowane);
 
-        HashSet<Integer> wylosowanyzbior = wylosujLizbyDoZbioru(10);
+        HashSet<Integer> wylosowanyzbior = wylosujLizbyDoZbioru(15);
         wypisz(wylosowanyzbior);
+        ArrayList<Integer> wczytaneliczby = wczytajzklawiatury(5);
+        System.out.println(wczytaneliczby);
     }
+    private static ArrayList<Integer> wczytajzklawiatury(int ileLiczb){
+        Scanner scanner =new Scanner(System.in);
+        ArrayList<Integer> wczytywaneliczby = new ArrayList<>();
+        for (int i = 0; i < ileLiczb; i++) {
+            System.out.println("Podaj liczbę");
+            wczytywaneliczby.add(scanner.nextInt());
+        }
+        return wczytywaneliczby;
+    }
+
     private static HashSet<Integer> wylosujLizbyDoZbioru(int ileLiczb){
         HashSet<Integer> zbiorLosowych =new HashSet<>();
         //elementy w zbiorze sa unikatowe nieindeksowane
@@ -40,6 +53,7 @@ public class Main {
         //w kazdej kolekcji nie musimy deklarowac rozmiaru na poczatku pracy z kolekcja
         //rozmiar moze byc zmieniany  -> dodawania i usuwania elementow
         //w kolekcji ty;lko typy zlozone
+
         int liczba1 = 0;//typ prosty z malej litery nie ma metod
         Integer liczba2 = 0;// typ zlozony na metody pisane z wielkiej litery
         Random random = new Random();
